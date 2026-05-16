@@ -1,16 +1,28 @@
 # WINGS MEOWWWW Dashboard
 
-Built with TanStack Start + Vite.
+Built with TanStack Start + Vite, targeting Cloudflare Workers.
 
-## Deploy to Vercel
+## Easiest deploy: Lovable
 
-1. Push this repo to GitHub (or GitLab/Bitbucket).
-2. Go to [vercel.com/new](https://vercel.com/new) and import the repo.
-3. Leave all defaults — `vercel.json` is preconfigured:
-   - Build command: `npm run build`
-   - Output directory: `dist`
-   - Install command: `npm install`
-4. Click **Deploy**. No environment variables are required.
+Click **Publish** in the Lovable editor. Your app goes live at
+`https://<your-project>.lovable.app` with zero config.
+
+## Deploy to Cloudflare Workers
+
+```bash
+npm install
+npm run build
+npx wrangler deploy
+```
+
+Config lives in `wrangler.jsonc`.
+
+## Note on Vercel
+
+This template is wired for Cloudflare Workers (see `src/server.ts` and
+`wrangler.jsonc`). Deploying to Vercel would require swapping in the TanStack
+Start Vercel adapter, which isn't currently available — use Lovable Publish
+or Cloudflare instead.
 
 ## Local dev
 
