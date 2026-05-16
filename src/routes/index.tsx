@@ -12,7 +12,15 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-type Employee = Record<string, any>;
+interface Employee {
+  name?: string;
+  empId?: string | number;
+  designation?: string;
+  phone?: string | number;
+  password?: string;
+  status?: string;
+  [key: string]: unknown;
+}
 
 function decode(pw: string) {
   if (!pw) return "";
