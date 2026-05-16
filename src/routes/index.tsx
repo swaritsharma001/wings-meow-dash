@@ -37,7 +37,7 @@ function Index() {
 
   const employees = useMemo(() => {
     if (!data) return [];
-    const list = Object.entries(data).map(([id, e]) => ({ id, ...e }));
+    const list = Object.entries(data).map(([id, e]) => ({ id, ...(e as Employee) }));
     const s = q.trim().toLowerCase();
     return s
       ? list.filter((e) => String(e.name ?? "").toLowerCase().includes(s))
