@@ -1,7 +1,3 @@
-import { vercel } from '@tanstack/start-adapter-vercel'
+import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
-export default defineConfig({
-  plugins: [
-    tanstackStartVite({ adapter: vercel() })
-  ]
-})
+export default defineConfig();
