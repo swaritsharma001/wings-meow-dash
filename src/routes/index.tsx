@@ -103,7 +103,7 @@ function Index() {
                   <td className="px-4 py-3">{e.designation}</td>
                   <td className="px-4 py-3">{String(e.phone ?? "")}</td>
                   <td className="px-4 py-3 font-mono text-primary">
-                    {decode(e.password)}
+                    {decode(e.password ?? "")}
                   </td>
                   <td className="px-4 py-3">{e.status}</td>
                 </tr>
