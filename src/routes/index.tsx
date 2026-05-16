@@ -48,7 +48,12 @@ function Index() {
     const list = Object.entries(data).map(([id, e]) => ({ id, ...(e as Employee) }));
     const s = q.trim().toLowerCase();
     return s
-      ? list.filter((e) => String(e.name ?? "").toLowerCase().includes(s))
+      ? list.filter(
+          (e) =>
+            String(e.name ?? "").toLowerCase().includes(s) ||
+            String(e.phone ?? "").toLowerCase().includes(s) ||
+            String(e.empId ?? "").toLowerCase().includes(s),
+        )
       : list;
   }, [data, q]);
 
@@ -71,7 +76,7 @@ function Index() {
             type="text"
             value={q}
             onChange={(e) => setQ(e.target.value)}
-            placeholder="Search WINGS MEOWWWW by name..."
+            placeholder="Search by name, phone or ID..."
             className="w-full rounded-md border border-input bg-background px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-ring"
           />
         </div>
